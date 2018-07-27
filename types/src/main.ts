@@ -151,6 +151,54 @@ export namespace Location {
 }
 
 /**
+* Represents a bezier curve text
+*/
+export interface Bezier {
+	
+	/**
+	 * The p1x component of this curve in the range [0-1]
+	 */
+	readonly p1x: number;
+	
+	
+	/**
+	 * The p1y component of this curve in the range [0-1]
+	 */
+	readonly p1y: number;
+	
+	
+	/**
+	 * The p2x component of this curve in the range [0-1]
+	 */
+	readonly p2x: number;
+	
+	
+	/**
+	 * The p2y component of this curve in the range [0-1]
+	 */
+	readonly p2y: number;
+}
+
+/**
+ * The belzier namespace provides helper functions to work with
+ * [Bezier](cubic-bezier(Bezier)) literals.
+ */
+
+export namespace Bezier {
+	/**
+	 * Creates a new Bezier literal
+	 */
+	export function create(p1x: number, p1y: number, p2x: number, p2y: number): Bezier {
+		return {
+			p1x,
+			p1y,
+			p2x,
+			p2y,
+		};
+	}
+}
+
+/**
  * Represents a color in RGBA space.
  */
 export interface Color {
